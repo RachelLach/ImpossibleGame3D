@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Jump")) // Input. doesn't exict in C#. Just in Rider
+        {
+            Rigidbody rigidBody = gameObject.GetComponent<Rigidbody>();
+            rigidBody.AddForce(0, 300, 0);
+        }
+
         transform.Translate(x:0, y:0,z:speed);
     }
 }
